@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YNJahit - Sentuhan Feminim, Sempurna</title>
+  <style>
+    /* Reset & Dasar Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #FEFEFE;
+      color: #161616;
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 0;
+    }
+
+    /* Header & Navigasi */
+    header {
+      background: #161616;
+      color: #FEFEFE;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      color: #FEFEFE;
+      font-size: 1.8em;
+      cursor: pointer;
+      margin-right: 20px;
+      border: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #FEFEFE;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        position: absolute;
+        background: #161616;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+
+    /* Section Styling */
+    section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h2.section-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: disc;
+      text-align: left;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 600px;
+      background: url(Foto/Logo.png) center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #3333;
+      margin-top: 80px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: rgb(254,254,254);
+      background-color: #161616;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color:#fff;
+      background-color: #161616;
+    }
+
+    /* Galeri Iklan & Testimoni */
+    .gallery-section {
+      padding: 50px 0;
+    }
+    .gallery-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .gallery-wrapper {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 10px;
+      padding: 10px;
+      scroll-behavior: smooth;
+    }
+    
+    .gallery-wrapper {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.gallery-wrapper img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+/* Ukuran khusus untuk setiap gambar */
+.gallery-wrapper img:nth-child(1) {
+  width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
+
+/* Untuk layar kecil, gambar disesuaikan */
+@media (max-width: 768px) {
+  .gallery-wrapper img {
+    width: 180px;
+    height: auto;
+  }
+}
+    
+
+    /* Konsultasi */
+    .consultation {
+      text-align: center;
+      padding: 50px 20px;
+      background: #161616;
+      color: #FEFEFE;
+    }
+    .consult-form {
+      max-width: 500px;
+      margin: auto;
+      background: #FEFEFE;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: left;
+      color: #161616;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .consult-form input, .consult-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .consult-form button {
+      width: 100%;
+      padding: 12px;
+      background: #161616;
+      color: #FEFEFE;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: #161616;
+      color: #FEFEFE;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigasi -->
+  <header>
+    <h1 class="logo">YN Jahit</h1>
+    <button class="nav-toggle">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#about">Tentang Kami</a></li>
+        <li><a href="#why">Mengapa Memilih Kami</a></li>
+        <li><a href="#gallery">Iklan & Testimoni</a></li>
+        <li><a href="#delivery">Offline & Delivery</a></li>
+        <li><a href="#consult">Konsultasi</a></li>
+        <li><a href="#contact">Hubungi Kami</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>YNJahit</h1>
+      <p>Sentuhan feminim, sempurna</p>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Tentang Kami</h2>
+      <p>
+        Kami memahami kebutuhan setiap wanita—dari ibu rumah tangga, mahasiswa, hingga profesional—yang mendambakan pakaian modis, nyaman, dan sesuai tren. Berdasarkan riset mendalam dan analisis kompetitor, kami hadir dengan identitas brand yang kuat, mengutamakan keahlian, kualitas bahan terbaik, dan pelayanan personal.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mengapa Memilih Kami -->
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Mengapa Memilih Kami?</h2>
+      <p>
+        Kami bukan sekadar jasa jahit—kami adalah mitra Anda dalam menciptakan penampilan yang memukau.  setiap pakaian yang Anda percayakan kepada kami akan menjadi karya yang anda inginkan.
+      </p>
+      <ul>
+        <li><strong>Layanan Responsif & Presisi:</strong> Setiap detail diperhatikan untuk hasil yang sempurna.</li>
+        <li><strong>Kualitas Premium:</strong> Kami menyediakan konsultasi bahan dari Yang termurah hingga menggunakan bahan terbaik untuk tampilan yang bagus.</li>
+        <li><strong>Layanan Anyang & Ekspedisi Se-Indonesia:</strong> Kami antar langsung ke depan pintu Anda, di mana pun Anda berada (untuk wilayah Dryorejo dan sekitarnya bisa langsung ke toko atau pengiriman secara langsung).</li>
+        <li><strong>Konsultasi Ahli:</strong> Dapatkan saran pemilihan bahan kain dan desain yang sesuai dengan gaya serta kebutuhan Anda.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <img src="Foto/Tp.png" alt="Promo 1" width="100%" height="auto" >
+
+  <!-- Iklan & Testimoni -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Iklan & Testimoni</h2>
+      <div class="gallery-wrapper">
+        <img src="Foto/Logo.png" alt="Iklan 1">
+        <img src="Foto/Testimoni1.jpg" alt="Iklan 1">
+      </div>
+      <h2 class="section-title">Promo Hari Ini</h2>
+      <div class="gallery-wrapper">
+        <img src="Foto/Tp.png" alt="Promo 1">
+      </div>
+    </div>
+  </section>
+
+  <!-- Offline & Delivery -->
+  <section id="delivery">
+    <div class="container">
+      <h2 class="section-title">Offline & Delivery</h2>
+      <p>
+        Kami menyediakan layanan antar (delivery) yang memudahkan pelanggan dari luar wilayah. Pengiriman secara langsung untuk Dryorejo dan paket pengiriman se-Indonesia melalui ekspedisi terpercaya, serta layanan pick-up bagi yang ingin konsultasi langsung di toko kami.
+      </p>
+    </div>
+  </section>
+
+  <!-- Konsultasi -->
+  <section id="consult">
+    <div class="container consultation">
+      <h2 class="section-title">Konsultasi Gratis</h2>
+      <div class="consult-form">
+        <form id="consultForm">
+          <input type="text" id="cname" placeholder="Nama Lengkap" required>
+          <input type="text" id="cphone" placeholder="Nomor Telepon" required>
+          <input type="text" id="caddress" placeholder="Alamat Lengkap" required>
+          <textarea id="cmessage" rows="4" placeholder="Ceritakan masalah atau kebutuhan Anda..." required></textarea>
+          <button type="submit">Kirim Data & Konsultasi via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hubungi Kami -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Hubungi Kami</h2>
+      <p>
+        Untuk pertanyaan lebih lanjut, silakan hubungi kami melalui WhatsApp atau email. Kami siap membantu Anda kapan saja.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 StitchMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu untuk tampilan mobile
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    });
+
+    // Mengirim data konsultasi ke WhatsApp
+    document.getElementById('consultForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const cname    = document.getElementById('cname').value;
+      const cphone   = document.getElementById('cphone').value;
+      const caddress = document.getElementById('caddress').value;
+      const cmessage = document.getElementById('cmessage').value;
+      
+      const waMessage = `*📌 Konsultasi StitchMaster*
+-----------------------------
+👤 *Nama:* ${cname}
+📞 *Nomor Telepon:* ${cphone}
+🏠 *Alamat:* ${caddress}
+📝 *Pesan:* ${cmessage}
+-----------------------------
+📩 Silakan segera ditindaklanjuti 🙏`;
+      
+      const waUrl = `https://wa.me/6283183054359?text=${encodeURIComponent(waMessage)}`;
+      window.open(waUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
